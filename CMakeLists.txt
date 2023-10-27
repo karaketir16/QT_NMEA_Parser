@@ -21,7 +21,7 @@ file(GLOB_RECURSE HEADERS
     )
 
 add_library(${PROJECT_NAME} STATIC ${SOURCES} ${HEADERS})
-include_directories("include")
+target_include_directories(${PROJECT_NAME} PUBLIC "include")
 
 
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
@@ -37,3 +37,4 @@ install(TARGETS ${PROJECT_NAME}
 
 add_executable(libTest test/asd.cpp test/main.cpp ${SOURCES} ${HEADERS})
 target_link_libraries(libTest Qt${QT_VERSION_MAJOR}::Core)
+target_include_directories(libTest PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include/)

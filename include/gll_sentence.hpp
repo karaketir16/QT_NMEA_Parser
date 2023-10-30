@@ -91,7 +91,7 @@ public:
         fields[MODE] = mode;
     }
 
-    bool getStatus(){
+    bool getStatus() const{
         if(fields[STATUS].empty()){
             return false;
         }else if(fields[STATUS][0] == VALID){
@@ -100,21 +100,21 @@ public:
         return false;
     }
 
-    double getLatitude(){
+    double getLatitude() const{
         if(fields[LATITUDE].empty()){
             return 0;
         }
         return ddmmToLatDegree(std::make_pair(fields[LATITUDE], fields[N_or_S] == "S" ? 'S' : 'N'));
     }
 
-    double getLongitude(){
+    double getLongitude() const{
         if(fields[LONGITUDE].empty()){
             return 0;
         }
         return ddmmToLongDegree(std::make_pair(fields[LONGITUDE], fields[E_or_W] == "W" ? 'W' : 'E'));
     }
 
-    ModeEnum getMode(){
+    ModeEnum getMode() const{
         if(fields[STATUS].empty()){
             return DataNotValid;
         }

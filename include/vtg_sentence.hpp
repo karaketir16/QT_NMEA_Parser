@@ -78,15 +78,15 @@ public:
         fields[eK] = "K";
     }
 
-    double getHeadingTrue(){
+    double getHeadingTrue() const{
         return QString::fromStdString(fields[COURSE_OVER_GROUND_DEGRESS_TRUE]).toDouble();
     }
 
-    double getHeadingMagnetic(){
+    double getHeadingMagnetic() const{
         return QString::fromStdString(fields[COURSE_OVER_GROUND_DEGRESS_MAGNETIC]).toDouble();
     }
 
-    Speed getGroundSpeed(){
+    Speed getGroundSpeed() const{
 
         if(! fields[GROUND_SPEED_KNOTS].empty()){
             return QString::fromStdString(fields[GROUND_SPEED_KNOTS]).toDouble();
@@ -106,7 +106,7 @@ public:
         fields[MODE] = mode;
     }
 
-    ModeEnum getMode(){
+    ModeEnum getMode() const{
         return static_cast<ModeEnum>(fields[MODE][0]);
     }
 };

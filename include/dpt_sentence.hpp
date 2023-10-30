@@ -34,7 +34,7 @@ public:
         fields[MAX_RANGE_SCALE_IN_USE] = toStringFloat(mx, 3);
     }
 
-    double getDepth(){
+    double getDepth() const{
         double val = 0;
 
         if(! fields[WATER_DEPTH_RELATIVE].empty()){
@@ -43,7 +43,7 @@ public:
 
         return val;
     }
-    double getOffset(){
+    double getOffset() const{
         double val = 0;
 
         if(! fields[OFFSET_FROM_TRANSDUCER].empty()){
@@ -53,7 +53,7 @@ public:
         return val;
     }
 
-    double getMax(){
+    double getMax() const{
         double val = 0;
 
         if(! fields[MAX_RANGE_SCALE_IN_USE].empty()){
@@ -71,4 +71,4 @@ public:
 
 Q_DECLARE_METATYPE(nmea::dpt::DPT_Sentence)
 
-#endif // GLL_SENTENCE_H
+#endif // DPT_SENTENCE_H

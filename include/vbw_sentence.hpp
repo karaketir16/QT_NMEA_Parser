@@ -52,7 +52,7 @@ public:
         fields[STATUS_GROUND_SPEED] = validity;
     }
 
-    QPair<Speed, Speed> getWaterSpeed(bool *valid){
+    QPair<Speed, Speed> getWaterSpeed(bool *valid) const{
         *valid = (fields[STATUS_WATER_SPEED] == "A");
 
         return {
@@ -61,7 +61,7 @@ public:
         };
     }
 
-    QPair<Speed, Speed> getGroundSpeed(bool *valid){
+    QPair<Speed, Speed> getGroundSpeed(bool *valid) const{
         *valid = (fields[STATUS_GROUND_SPEED] == "A");
 
         return {

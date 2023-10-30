@@ -27,7 +27,7 @@ public:
         fields[T_Field] = "T";
     }
 
-    double getHeading(){
+    double getHeading() const{
         double heading = 0;
 
         if(! fields[HEADING_DEGREES].empty()){
@@ -47,4 +47,4 @@ public:
 Q_DECLARE_METATYPE(nmea::hdt::HDT_Sentence)
 
 
-#endif // GLL_SENTENCE_H
+#endif // HDT_SENTENCE_H

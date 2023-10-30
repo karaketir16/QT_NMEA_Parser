@@ -11,6 +11,7 @@
 #include "dpt_sentence.hpp"
 #include "gll_sentence.hpp"
 #include "hrp_sentence.hpp"
+#include "zda_sentence.hpp"
 
 #include <iostream>
 
@@ -33,6 +34,7 @@ enum class SentenceID {
     VHW,
     VTG,
     HRP,
+    ZDA,
     NONE
 };
 
@@ -53,6 +55,7 @@ public:
         __nmap_macro(VHW);
         __nmap_macro(VTG);
         __nmap_macro(HRP);
+        __nmap_macro(ZDA);
 
         return SentenceID::NONE;
     }
@@ -73,6 +76,7 @@ public:
         qRegisterMetaType<nmea::vhw::VHW_Sentence>("nmea::vhw::VHW_Sentence");
         qRegisterMetaType<nmea::vtg::VTG_Sentence>("nmea::vtg::VTG_Sentence");
         qRegisterMetaType<nmea::hrp::HRP_Sentence>("nmea::hrp::HRP_Sentence");
+        qRegisterMetaType<nmea::zda::ZDA_Sentence>("nmea::zda::ZDA_Sentence");
         
     }
 
@@ -111,6 +115,7 @@ signals:
     _signalMacro(vhw, VHW);
     _signalMacro(vtg, VTG);
     _signalMacro(hrp, HRP);
+    _signalMacro(zda, ZDA);
 
 
 public slots:
@@ -142,6 +147,7 @@ public slots:
         _swCaseMacro(vhw, VHW);
         _swCaseMacro(vtg, VTG);
         _swCaseMacro(hrp, HRP);
+        _swCaseMacro(zda, ZDA);
 
 
         default:

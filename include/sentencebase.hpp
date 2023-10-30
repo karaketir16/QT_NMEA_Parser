@@ -180,7 +180,7 @@ namespace nmea
             return ss.str();
         }
 
-        Time_t hhmmssToTime(std::string hhmmss)
+        Time_t hhmmssToTime(std::string hhmmss) const
         {
             Time_t res;
             if (hhmmss.empty())
@@ -213,7 +213,7 @@ namespace nmea
             return std::make_pair(ss.str(), res);
         }
 
-        double ddmmToLatDegree(std::pair<std::string, char> in)
+        double ddmmToLatDegree(std::pair<std::string, char> in) const
         {
             double degree = 0;
             int dd = 0;
@@ -254,7 +254,7 @@ namespace nmea
             return ss.str();
         }
 
-        double ddmmToLongDegree(std::pair<std::string, char> in)
+        double ddmmToLongDegree(std::pair<std::string, char> in) const
         {
             double degree = 0;
             int dd = 0;

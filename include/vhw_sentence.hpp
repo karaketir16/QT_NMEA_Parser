@@ -52,15 +52,15 @@ public:
         fields[eK] = "K";
     }
 
-    double getHeadingTrue(){
+    double getHeadingTrue() const{
         return QString::fromStdString(fields[HEADING_DEGRESS_TRUE]).toDouble();
     }
 
-    double getHeadingMagnetic(){
+    double getHeadingMagnetic() const{
         return QString::fromStdString(fields[HEADING_DEGRESS_MAGNETIC]).toDouble();
     }
 
-    Speed getWaterSpeed(){
+    Speed getWaterSpeed() const {
 
         if(! fields[WATER_SPEED_KNOTS].empty()){
             return QString::fromStdString(fields[WATER_SPEED_KNOTS]).toDouble();

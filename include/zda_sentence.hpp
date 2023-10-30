@@ -48,7 +48,7 @@ public:
     }
 
 
-    Time_t getTime(){
+    Time_t getTime() const{
         return hhmmssToTime(fields[UTC]);
     }
 
@@ -58,7 +58,7 @@ public:
         fields[YEAR]    = QString::number(date.year()).toStdString();
     }
 
-    QDate getDate(){
+    QDate getDate() const{
         auto day = QString::fromStdString(fields[DAY]).toInt();
         auto month = QString::fromStdString(fields[MONTH]).toInt();
         auto year = QString::fromStdString(fields[YEAR]).toInt();
@@ -75,7 +75,7 @@ public:
         fields[LOCAL_ZONE_MINUTES]  = minute;
     }
 
-    void getZone(int &hour, int& minute){
+    void getZone(int &hour, int& minute) const{
         hour = QString::fromStdString(fields[LOCAL_ZONE_HOURS]).toInt();
         minute = QString::fromStdString(fields[LOCAL_ZONE_MINUTES]).toInt();
 

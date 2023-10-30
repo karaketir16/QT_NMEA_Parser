@@ -58,7 +58,7 @@ public:
     }
 
 
-    double getWindAngle(){
+    double getWindAngle() const{
         double angle = 0;
 
         if(! fields[eWindAngle].empty()){
@@ -68,7 +68,7 @@ public:
         return angle;
     }
 
-    ReferenceEnum getReference(){
+    ReferenceEnum getReference() const{
         ReferenceEnum ref = ReferenceEnum::eRelative;
 
         if(! fields[eReference].empty()){
@@ -77,7 +77,7 @@ public:
         return ref;
     }
 
-    QPair<double, WindSpeedUnitsEnum> getWindSpeed(){
+    QPair<double, WindSpeedUnitsEnum> getWindSpeed() const{
         double speed = 0;
         WindSpeedUnitsEnum unit = WindSpeedUnitsEnum::eMps;
 
@@ -91,7 +91,7 @@ public:
         return qMakePair(speed, unit);
     }
 
-    bool getStatus(){
+    bool getStatus() const{
         if(fields[eStatus].empty()){
             return false;
         }else if(fields[eStatus][0] == 'A'){
@@ -100,7 +100,7 @@ public:
         return false;
     }
 
-    Speed getSpeed(){
+    Speed getSpeed() const{
         Speed s;
         auto su = getWindSpeed();
         switch (su.second) {

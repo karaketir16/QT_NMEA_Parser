@@ -149,6 +149,9 @@ public slots:
         _swCaseMacro(hrp, HRP);
         _swCaseMacro(zda, ZDA);
 
+        case nmea::SentenceID::NONE:
+            break;
+
 
         default:
             break;

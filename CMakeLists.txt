@@ -24,6 +24,14 @@ add_library(${PROJECT_NAME} STATIC ${SOURCES} ${HEADERS})
 target_include_directories(${PROJECT_NAME} PUBLIC "include")
 
 
+if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    target_compile_options(${PROJECT_NAME} INTERFACE -Werror=switch-enum)
+elseif (CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
+    # Specifically treat C4061 as an error
+    target_compile_options(${PROJECT_NAME} INTERFACE /we4061)
+endif()
+
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 target_link_libraries(${PROJECT_NAME} Qt${QT_VERSION_MAJOR}::Core)

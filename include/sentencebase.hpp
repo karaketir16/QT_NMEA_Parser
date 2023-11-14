@@ -264,7 +264,7 @@ namespace nmea
             return (in.second == EAST ? 1 : -1) * degree;
         }
 
-        std::string generateSentence(bool addChecksum)
+        std::string generateSentence(bool addChecksum = true)
         {
             std::stringstream res;
             res << "$";

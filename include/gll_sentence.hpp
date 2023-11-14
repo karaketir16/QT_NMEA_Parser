@@ -52,6 +52,10 @@ public:
         fields[UTC] = timeTo_hhmmss(time);
     }
 
+    Time_t getTime() const{
+        return hhmmssToTime(fields[UTC]);
+    }
+
     void setLatitude(double lat){
         auto tmp = latDegreeTo_ddmm(lat);
         fields[LATITUDE] = tmp.first;
